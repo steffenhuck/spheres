@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spheres — A Play</title>
+  <script data-goatcounter="https://steffenhuck.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* Libre Caslon via @import fallback — EB Garamond as primary Caslon-era face */
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+    :root {
+      --bg: #e8ddd8;
+      --text: #2a1a1a;
+      --text-dim: #5a3a3a;
+      --burgundy: #6b1f2a;
+      --indent: 1.8rem;
+      --max-width: 680px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Libre Caslon Text', 'EB Garamond', Georgia, serif;
+      font-size: 20px;
+      line-height: 1.75;
+      padding: 5rem 2rem 8rem;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .title {
+      font-family: 'Libre Caslon Text', 'EB Garamond', Georgia, serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 2.4rem;
+    }
+
+    /* ── Plate image ── */
+    .plate {
+      display: block;
+      margin: 0 auto 2.6rem;
+      width: 360px;
+      max-width: 100%;
+    }
+
+    /* ── Cast list ── */
+    .cast-heading {
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 0.6rem;
+      text-align: center;
+    }
+
+    .cast {
+      font-style: italic;
+      color: var(--text-dim);
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── Scene note ── */
+    .scene {
+      font-style: italic;
+      color: var(--text-dim);
+      margin-bottom: 1.4rem;
+      padding-left: var(--indent);
+      font-size: 1.1rem;
+    }
+
+    /* ── Speech block ── */
+    .speech {
+      margin-bottom: 1.4rem;
+      padding-left: 0;
+    }
+
+    .speaker {
+      font-variant: small-caps;
+      font-size: 1.02rem;
+      letter-spacing: 0.12em;
+      color: var(--burgundy);
+      font-style: normal;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .lines {
+      padding-left: var(--indent);
+    }
+
+    /* ── Stage directions ── */
+    .direction {
+      font-style: italic;
+      color: var(--text-dim);
+      padding-left: var(--indent);
+      margin-bottom: 1.4rem;
+      font-size: 1.1rem;
+    }
+
+    /* direction that appears within a speech block, after speaker tag */
+    .lines .direction-inline {
+      font-style: italic;
+      color: var(--text-dim);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Separator ── */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--burgundy);
+      opacity: 0.25;
+      margin: 3rem 0;
+    }
+
+    /* ── Dedication ── */
+    .dedication {
+      font-style: italic;
+      color: var(--text-dim);
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 4rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Signature ── */
+    .signature {
+      display: block;
+      text-align: center;
+      margin-top: 1.6rem;
+      font-size: 0.88rem;
+      letter-spacing: 0.28em;
+      text-transform: lowercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      opacity: 0.75;
+    }
+
+    .signature:hover {
+      opacity: 1;
+      color: var(--burgundy);
+    }
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="title">Spheres</div>
+    <div class="subtitle">A Play</div>
+    <img class="plate" src="spheres.png" alt="Dome interior with figure">
+    <div class="cast-heading">Cast</div>
+    <div class="cast">
+      The Instructor · Étienne-Louis Boullée · The First Student<br>The New Student · The Other Students
+    </div>
+  </header>
+
+  <div class="scene">(One of the Institute's classrooms. The students in rows. At the front an overhead projector. The Instructor stands beside it.)</div>
+
+  <div class="speech">
+    <span class="speaker">The Instructor</span>
+    <div class="lines">Today we treat architecture. You may not yet appreciate its importance now. You are all so young … But, once in power, you will remember this lesson.</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">The Instructor</span>
+    <div class="lines">Please welcome Monsieur Étienne-Louis Boullée.</div>
+  </div>
+
+  <div class="direction">(Boullée enters, a stack of slides in his hands. He approaches the lectern.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">Young minds. It is a pleasure to find myself among you.</div>
+  </div>
+
+  <div class="direction">(He puts his stack of slides on the projector's side tray.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">I have raised buildings that citizens enter as ants, ants unaware of the magnificent structure they are part of. But when they leave again, they will see the hill and appreciate the beauty of its encompassing dome.</div>
+  </div>
+
+  <div class="direction">(He shows a first slide, one of his drawings for the Cenotaph of Newton.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">My Cenotaph for Sir Isaac Newton. A perfect sphere, one hundred and fifty meters in diameter. Within, a single sarcophagus, modest, almost invisible.</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">When facing the universe even the geniuses become very small. But they belong. They belong to something even greater than themselves.</div>
+  </div>
+
+  <div class="direction">(Boullée changes the slide.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">The shell of the sphere is pierced by small apertures, so calibrated that visitors, standing upon the floor of the interior, behold above them the firmament. The stars. The very heavens.<br><br>
+    It is, I believe, the only edifice in Europe which contains, by design, the cosmos.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The First Student</span>
+    <div class="lines">Where has it been erected?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">In London. Where else?</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">A visitor's pass is just five quid.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The New Student</span>
+    <div class="lines">We should visit it.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The Other Students</span>
+    <div class="lines">And Soho! So, ho!</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The Instructor</span>
+    <div class="lines">Perhaps Monsieur Boullée might continue.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">Thank you. Yes.</div>
+  </div>
+
+  <div class="direction">(Boullée changes the slide.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">In the early 1780s I designed an entire metropolis. Forward-looking. Eternal. It's where they reign today.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The Other Students</span>
+    <div class="lines">Reign!</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">It is dominated by a sphere. What else really? The sphere is universe. It is the belly.</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">It is the belly of the architect. And it is the belly of the ruler. The sphere becomes the ruler and the ruler becomes the sphere.</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">The universe.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The New Student</span>
+    <div class="lines">Is it in Paris?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">Where else?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The New Student</span>
+    <div class="lines">I couldn't find it.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines"><span class="direction-inline">(turning to the Instructor)</span>
+    Maybe you should teach them how to use Google Maps.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The Instructor</span>
+    <div class="lines">We must. But, please, continue.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">The great principle which I beg you to retain is that architecture is not addressed to the inhabitant of the present. It is addressed to the imagination of the future. It is a proposition for those who stand before it.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The First Student</span>
+    <div class="lines">Which proposition?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">That they are small. That the State is vast. That there exists, above them and around them, a magnitude to which they must conform or be reduced to nothing. The dome speaks to them in the language of Reason and of Nature, and tells them gently what they are. A part.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The Other Students</span>
+    <div class="lines">A part.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">My successors understood this. They learned from me. My dear friend Albert intended to construct the most colossal sphere of them all. A pity, that history denied him the occasion.</div>
+  </div>
+
+  <div class="direction">(A pause.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">But we have the drawings.</div>
+  </div>
+
+  <div class="direction">(Boullée changes the slide, showing the Volkshalle.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">He would have outdone even myself. The advancement in building materials might have made it possible.</div>
+  </div>
+
+  <div class="direction">(A beat.)</div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">With concrete I would have been able to surpass Newton. With concrete I would have been able to defy gravity.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The First Student</span>
+    <div class="lines">I worry about the apertures.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">How else could the entirety of the universe be seen?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The New Student</span>
+    <div class="lines">I think he worries about the rain.</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">Boullée</span>
+    <div class="lines">The reign?</div>
+  </div>
+
+  <div class="speech">
+    <span class="speaker">The First Student</span>
+    <div class="lines">The concrete.</div>
+  </div>
+
+  <div class="dedication">dedicated to Dietrich Domanski</div>
+  <a class="signature" href="https://steffenhuck.github.io">steffen huck</a>
+
+</div>
+</body>
+</html>
